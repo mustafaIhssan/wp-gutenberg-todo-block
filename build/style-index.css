@@ -1,0 +1,55 @@
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+.todoList {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+
+.todoList div {
+  display: flex;
+  align-items: center;
+}
+
+.checked {
+  width: 40px;
+  height: 40px;
+  background: #0284c7;
+  border-radius: 60px;
+}
+
+.checked div {
+  display: inline-block;
+  margin-top: 4px;
+  transform: rotate(45deg);
+  height: 24px;
+  width: 12px;
+  border-bottom: #fff solid 3px;
+  border-right: #fff solid 3px;
+}
+
+.unchecked {
+  width: 34px;
+  height: 34px;
+  border-radius: 60px;
+  border: #0284c7 solid 3px;
+}
+
+.item {
+  display: flex;
+}
+
+.item span {
+  margin-top: auto;
+  margin-left: 10px;
+  font-size: 33px;
+}
+
+.done {
+  -webkit-text-decoration-line: line-through;
+          text-decoration-line: line-through;
+  color: darkgray;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

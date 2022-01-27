@@ -1,0 +1,50 @@
+.todoList {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+
+.todoList div{
+  display: flex;
+  align-items: center;
+}
+
+.checked {
+  width: 40px;
+  height: 40px;
+  background: rgb(2 132 199);
+  border-radius: 60px;
+}
+
+.checked div {
+  display: inline-block;
+  margin-top: 4px;
+  transform: rotate(45deg);
+  height: 24px;
+  width: 12px;
+  border-bottom: #fff solid 3px;
+  border-right: #fff solid 3px;
+}
+
+.unchecked {
+  width: calc(40px - 6px);
+  height: calc(40px - 6px);
+  border-radius: 60px;
+  border: rgb(2 132 199) solid 3px;
+}
+
+.item {
+  display: flex;
+}
+
+.item span {
+  margin-top: auto;
+  margin-left: 10px;
+  font-size: 33px;
+}
+
+.done {
+  text-decoration-line: line-through;
+  color: darkgray;
+}
+

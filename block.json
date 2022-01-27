@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json.schemastore.org/block.json",
+	"apiVersion": 2,
+	"name": "create-block/starter-block",
+	"version": "0.1.0",
+	"title": "Baby First Block!",
+	"category": "widgets",
+	"icon": "reddit",
+	"description": "Howdy Partner.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "starter-block",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}
