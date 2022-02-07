@@ -1,19 +1,18 @@
 import {useBlockProps} from '@wordpress/block-editor';
-import {FormToggle, Placeholder, TextControl} from '@wordpress/components';
+import {Placeholder, TextControl} from '@wordpress/components';
 import {useState} from '@wordpress/element';
 import {Button} from '@wordpress/components';
 
 import './editor.scss';
 import {Item} from "./item";
 
-export default function Edit({attributes, setAttributes}) {
+export default function Edit(props) {
+
+	const {attributes, setAttributes} = props
 
 	const [count, setCount] = useState(1);
 
-	const NewToDo = () => <Button variant="primary" onClick={() => setCount(e => e + 1)}>+</Button>;
-
 	const getValueByID = (id, attr = 'value') => JSON.parse(attributes.message || '[]').find(i => i.id === id)?.[attr] || ''
-
 
 	const save = (id, value, attr = 'value') => {
 
@@ -24,34 +23,33 @@ export default function Edit({attributes, setAttributes}) {
 
 		setAttributes({message: JSON.stringify(newData)})
 	}
+	const NewToDo = () => <Button variant="primary" onClick={() => setCount(e => e + 1)}>+</Button>;
 
 	return (
 		<div {...useBlockProps()}>
-			<Placeholder
-				label="Todo"
-				instructions="Add Tags separated with ','"
-			>
-
-				<div className="todoList">
+			<div className="todoList">
+				<TextControl className="todo-title" value={attributes?.title || 'Title'}
+							 onChange={(val) => setAttributes({title: val})}/>
+				<TextControl
+					className="todo-subtitle"
+					value={attributes?.subtitle || 'Subtitle'}
+					onChange={(val) => setAttributes({subtitle: val})}
+				/>
+				<div className="items">
 					{[...Array(count)].map((_, i) => (
-						<div>
-							<Item isDone={}/>
-							<TextControl
+						<div className="todoItem">
+							<Item
 								key={`Item-${i}`}
-								value={getValueByID(i)}
+								isDone={Boolean(getValueByID(i, 'checked'))}
+								onTick={() => save(i, !getValueByID(i, 'checked'), 'checked')}
+								isEdit={true}
+								text={getValueByID(i)}
 								onChange={(val) => save(i, val)}
-							/>
-							<FormToggle
-								checked={!!getValueByID(i, 'checked')}
-								onChange={() => {
-									console.log('val', !getValueByID(i, 'checked'))
-									save(i, !getValueByID(i, 'checked'), 'checked')
-								}}
 							/>
 							{i === count - 1 && <NewToDo/>}
 						</div>))}
 				</div>
-			</Placeholder>
+			</div>
 		</div>
 	);
 }

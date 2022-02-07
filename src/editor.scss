@@ -1,9 +1,90 @@
-/**
- * The following styles get applied inside the editor only.
- *
- * Replace them with your own styles or remove the file completely.
- */
-
 .wp-block-create-block-starter-block {
-	border: 1px dotted #f00;
+  border: 1px dotted #f00;
+
+  .todoList {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	background-color: white;
+  }
+
+  .items {
+	margin-top: 10px;
+	padding: 10px;
+  }
+
+  .todoItem {
+	display: flex;
+	align-items: center;
+  }
+
+  .checked {
+	width: 34px;
+	height: 34px;
+	background: rgb(2 132 199);
+	border-radius: 60px;
+
+	div {
+	  margin-top: 11px;
+	  margin-left: 7px;
+	  transform: rotate(45deg);
+	  height: 11px;
+	  width: 20px;
+	  border-bottom: #fff solid 2px;
+	  border-right: #fff solid 2px;
+	}
+  }
+
+  .unchecked {
+	width: calc(40px - 6px);
+	height: calc(40px - 6px);
+	border-radius: 60px;
+	border: rgb(2 132 199) solid 3px;
+  }
+
+  .item {
+	display: flex;
+
+	input {
+	  margin-left: 5px;
+	  font-size: 1.4em;
+	  border: none;
+	}
+
+	.done input {
+	  text-decoration-line: line-through;
+	  color: darkgray;
+	}
+
+
+	span {
+	  margin-top: auto;
+	  margin-left: 10px;
+	  font-size: 33px;
+	}
+  }
+
+  .todo-title {
+	font-size: 18pt;
+	font-weight: normal;
+	margin-bottom: 0;
+
+	input {
+	  font-size: 1.4em;
+	  border: none;
+	}
+  }
+
+  .todo-subtitle {
+	font-size: 8pt;
+	font-weight: normal;
+	margin-bottom: 0;
+
+
+	input {
+	  font-size: 1.4em;
+	  border: none;
+	}
+  }
+
 }

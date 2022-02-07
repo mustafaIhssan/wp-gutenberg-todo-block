@@ -1,13 +1,92 @@
 /******/ (function() { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/edit.js":
 /*!*********************!*\
   !*** ./src/edit.js ***!
   \*********************/
-/***/ (function() {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/mustafaihssan/Projects/wordpress/starter-block/src/edit.js: Unexpected token (39:19)\n\n\u001b[0m \u001b[90m 37 |\u001b[39m \t\t\t\t\t\t\u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 38 |\u001b[39m \t\t\t\t\t\t\t\u001b[33m<\u001b[39m\u001b[33mItem\u001b[39m isDone\u001b[33m=\u001b[39m{() \u001b[33m=>\u001b[39m getValueByID(i\u001b[33m,\u001b[39m \u001b[32m'checked'\u001b[39m)}\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 39 |\u001b[39m \t\t\t\t\t\t\t\t  onTick\u001b[33m=\u001b[39m{() \u001b[33m=\u001b[39m \u001b[33m>\u001b[39msave(i\u001b[33m,\u001b[39m \u001b[33m!\u001b[39mgetValueByID(i\u001b[33m,\u001b[39m \u001b[32m'checked'\u001b[39m)\u001b[33m,\u001b[39m \u001b[32m'checked'\u001b[39m)}\u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \t\t\t\t\t\t\t\t           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 40 |\u001b[39m \t\t\t\t\t\t\t\u001b[33m<\u001b[39m\u001b[33mTextControl\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 41 |\u001b[39m \t\t\t\t\t\t\t\tkey\u001b[33m=\u001b[39m{\u001b[32m`Item-${i}`\u001b[39m}\u001b[0m\n\u001b[0m \u001b[90m 42 |\u001b[39m \t\t\t\t\t\t\t\tvalue\u001b[33m=\u001b[39m{getValueByID(i)}\u001b[0m\n    at Object._raise (/Users/mustafaihssan/Projects/wordpress/starter-block/node_modules/@babel/parser/lib/index.js:569:17)\n    at Object.raiseWithData (/Users/mustafaihssan/Projects/wordpress/starter-block/node_modules/@babel/parser/lib/index.js:562:17)\n    at Object.raise (/Users/mustafaihssan/Projects/wordpress/starter-block/node_modules/@babel/parser/lib/index.js:523:17)\n    at Object.unexpected (/Users/mustafaihssan/Projects/wordpress/starter-block/node_modules/@babel/parser/lib/index.js:3601:16)\n    at Object.parseParenAndDistinguishExpression (/Users/mustafaihssan/Projects/wordpress/starter-block/node_modules/@babel/parser/lib/index.js:12394:12)\n    at Object.parseExprAtom (/Users/mustafaihssan/Projects/wordpress/starter-block/node_modules/@babel/parser/lib/index.js:11968:23)\n    at Object.parseExprAtom (/Users/mustafaihssan/Projects/wordpress/starter-block/node_modules/@babel/parser/lib/index.js:7523:20)\n    at Object.parseExprSubscripts (/Users/mustafaihssan/Projects/wordpress/starter-block/node_modules/@babel/parser/lib/index.js:11658:23)\n    at Object.parseUpdate (/Users/mustafaihssan/Projects/wordpress/starter-block/node_modules/@babel/parser/lib/index.js:11638:21)\n    at Object.parseMaybeUnary (/Users/mustafaihssan/Projects/wordpress/starter-block/node_modules/@babel/parser/lib/index.js:11613:23)");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ Edit; }
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
+/* harmony import */ var _item__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./item */ "./src/item.js");
+
+
+
+
+
+
+
+function Edit(props) {
+  const {
+    attributes,
+    setAttributes
+  } = props;
+  const [count, setCount] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(1);
+
+  const getValueByID = function (id) {
+    let attr = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'value';
+    return JSON.parse(attributes.message || '[]').find(i => i.id === id)?.[attr] || '';
+  };
+
+  const save = function (id, value) {
+    let attr = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'value';
+    const data = JSON.parse(attributes.message || '[]');
+    const isNew = !data.find(i => id === i.id);
+    const newData = isNew ? [...data, {
+      id,
+      value
+    }] : data.map(i => i.id === id ? { ...i,
+      id,
+      [attr]: value
+    } : i);
+    setAttributes({
+      message: JSON.stringify(newData)
+    });
+  };
+
+  const NewToDo = () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+    variant: "primary",
+    onClick: () => setCount(e => e + 1)
+  }, "+");
+
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "todoList"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+    className: "todo-title",
+    value: attributes?.title || 'Title',
+    onChange: val => setAttributes({
+      title: val
+    })
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+    className: "todo-subtitle",
+    value: attributes?.subtitle || 'Subtitle',
+    onChange: val => setAttributes({
+      subtitle: val
+    })
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "items"
+  }, [...Array(count)].map((_, i) => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "todoItem"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_item__WEBPACK_IMPORTED_MODULE_4__.Item, {
+    key: `Item-${i}`,
+    isDone: Boolean(getValueByID(i, 'checked')),
+    onTick: () => save(i, !getValueByID(i, 'checked'), 'checked'),
+    isEdit: true,
+    text: getValueByID(i),
+    onChange: val => save(i, val)
+  }), i === count - 1 && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(NewToDo, null))))));
+}
 
 /***/ }),
 
@@ -17,7 +96,6 @@ throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index
   \**********************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
@@ -65,13 +143,105 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/item.js":
+/*!*********************!*\
+  !*** ./src/item.js ***!
+  \*********************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Item": function() { return /* binding */ Item; },
+/* harmony export */   "ItemText": function() { return /* binding */ ItemText; }
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
+
+
+
+const Item = _ref => {
+  let {
+    isDone,
+    onTick,
+    onChange,
+    text = 'empty',
+    isEdit
+  } = _ref;
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "item"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(TickOption, {
+    onClick: onTick,
+    isDone: isDone
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(ItemText, {
+    isEdit,
+    text,
+    isDone,
+    onChange
+  }));
+};
+const ItemText = _ref2 => {
+  let {
+    isEdit,
+    text,
+    isDone,
+    onChange
+  } = _ref2;
+  return isEdit ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(ItemTextInput, {
+    text,
+    isDone,
+    onChange
+  }) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(ItemTextDisplay, {
+    text,
+    isDone,
+    onChange
+  });
+};
+
+const TickOption = _ref3 => {
+  let {
+    isDone,
+    onClick
+  } = _ref3;
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: isDone ? "checked" : 'unchecked',
+    onClick: onClick
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null));
+};
+
+const ItemTextDisplay = _ref4 => {
+  let {
+    isDone,
+    text
+  } = _ref4;
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: `item ${isDone ? 'done' : 'todo'}`
+  }, text);
+};
+
+const ItemTextInput = _ref5 => {
+  let {
+    text,
+    isDone,
+    onChange
+  } = _ref5;
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+    className: `itemInput ${isDone ? 'done' : 'todo'}`,
+    value: text,
+    onChange: onChange
+  });
+};
+
+/***/ }),
+
 /***/ "./src/save.js":
 /*!*********************!*\
   !*** ./src/save.js ***!
   \*********************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": function() { return /* binding */ save; }
@@ -80,20 +250,47 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _item__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./item */ "./src/item.js");
+
 
 
 function save(_ref) {
   let {
-    attributes: {
-      message = '[]'
-    }
+    attributes
   } = _ref;
-  console.log(message);
+  const {
+    message = '[]',
+    title,
+    subtitle
+  } = attributes;
   const items = JSON.parse(message);
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, "Todo: "), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", null, items.map(i => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
-    key: i.id
-  }, i.checked ? '[X]' : '[ ]', " ", i.value))));
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "todoList"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", {
+    className: "todo-title"
+  }, title), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "todo-subtitle"
+  }, subtitle), items.map(item => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "todoItem"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_item__WEBPACK_IMPORTED_MODULE_2__.Item, {
+    key: item.id,
+    text: item.value,
+    isDone: item.checked,
+    isEdit: false
+  })))));
 }
+
+/***/ }),
+
+/***/ "./src/editor.scss":
+/*!*************************!*\
+  !*** ./src/editor.scss ***!
+  \*************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
 
 /***/ }),
 
@@ -103,7 +300,6 @@ function save(_ref) {
   \************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
@@ -116,7 +312,6 @@ __webpack_require__.r(__webpack_exports__);
   \*************************************/
 /***/ (function(module) {
 
-"use strict";
 module.exports = window["wp"]["blockEditor"];
 
 /***/ }),
@@ -127,8 +322,17 @@ module.exports = window["wp"]["blockEditor"];
   \********************************/
 /***/ (function(module) {
 
-"use strict";
 module.exports = window["wp"]["blocks"];
+
+/***/ }),
+
+/***/ "@wordpress/components":
+/*!************************************!*\
+  !*** external ["wp","components"] ***!
+  \************************************/
+/***/ (function(module) {
+
+module.exports = window["wp"]["components"];
 
 /***/ }),
 
@@ -138,7 +342,6 @@ module.exports = window["wp"]["blocks"];
   \*********************************/
 /***/ (function(module) {
 
-"use strict";
 module.exports = window["wp"]["element"];
 
 /***/ })

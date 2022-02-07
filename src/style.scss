@@ -4,26 +4,27 @@
   flex-direction: column;
 }
 
-.todoList div{
+.todoItem {
   display: flex;
   align-items: center;
 }
 
 .checked {
-  width: 40px;
-  height: 40px;
+  width: 34px;
+  height: 34px;
   background: rgb(2 132 199);
   border-radius: 60px;
-}
 
-.checked div {
-  display: inline-block;
-  margin-top: 4px;
-  transform: rotate(45deg);
-  height: 24px;
-  width: 12px;
-  border-bottom: #fff solid 3px;
-  border-right: #fff solid 3px;
+  div {
+	//display: inline-block;
+	margin-top: 10px;
+	margin-left: 6px;
+	transform: rotate(45deg);
+	height: 11px;
+	width: 20px;
+	border-bottom: #fff solid 2px;
+	border-right: #fff solid 2px;
+  }
 }
 
 .unchecked {
@@ -35,16 +36,36 @@
 
 .item {
   display: flex;
+  align-items: center;
+
+  input {
+	margin-left: 5px;
+	font-size: 1.4em;
+	border: none;
+  }
+
+  .done {
+	text-decoration-line: line-through;
+	color: darkgray;
+  }
+
+  span {
+	margin-top: auto;
+	margin-left: 10px;
+	font-size: 33px;
+  }
 }
 
-.item span {
-  margin-top: auto;
-  margin-left: 10px;
-  font-size: 33px;
+.todo-title {
+  font-size: 24pt;
+  display: block;
+  margin-bottom: 25px;
+  font-weight: normal;
 }
 
-.done {
-  text-decoration-line: line-through;
-  color: darkgray;
+.todo-subtitle {
+  font-size: 14pt;
+  color: lightslategrey;
+  margin-bottom: 20px;
+  font-weight: normal;
 }
-

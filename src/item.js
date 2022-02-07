@@ -1,22 +1,30 @@
 import {TextControl} from "@wordpress/components";
+import './editor.scss';
 
-export const Item = ({isDone, onTick, onChange, text, isEdit}) =>
-	<div className="item">
+export const Item = ({isDone, onTick, onChange, text = 'empty', isEdit}) => {
+	return <div className="item">
 		<TickOption onClick={onTick} isDone={isDone}/>
-		{isEdit ? <ItemText text={text} isDone={isDone}/> : <ItemTextInput text={text} onChange={onChange}/>}
+		<ItemText {...{isEdit, text, isDone, onChange}}/>
 	</div>
+}
+
+export const ItemText = ({isEdit, text, isDone, onChange}) =>
+	isEdit ? <ItemTextInput {...{text, isDone, onChange}}/> :
+		<ItemTextDisplay {...{text, isDone, onChange}}/>
 
 
 const TickOption = ({isDone, onClick}) => {
-	return <div className={isDone ? "checked" : 'unchecked'} onClick={isDone ? onClick : null}>
+	return <div className={isDone ? "checked" : 'unchecked'} onClick={onClick}>
 		<div/>
 	</div>
 }
 
-const ItemText = ({isDone, text}) => <span className={isDone ? 'done' : 'todo'}>{text}</span>
+const ItemTextDisplay = ({isDone, text}) => <span
+	className={`item ${isDone ? 'done' : 'todo'}`}>{text}</span>
 
-const ItemTextInput = ({text, onChange}) =>
+const ItemTextInput = ({text, isDone, onChange}) =>
 	<TextControl
+		className={`itemInput ${isDone ? 'done' : 'todo'}`}
 		value={text}
 		onChange={onChange}
 	/>

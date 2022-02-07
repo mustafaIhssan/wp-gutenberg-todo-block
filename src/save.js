@@ -1,15 +1,27 @@
 import {useBlockProps} from '@wordpress/block-editor';
 
-export default function save({attributes: {message = '[]'}}) {
+import {Item} from "./item";
 
-	console.log(message)
+export default function save({attributes}) {
+
+	const {message = '[]', title, subtitle} = attributes
 	const items = JSON.parse(message)
+
 	return (
 		<div {...useBlockProps.save()}>
-			<h3>Todo: </h3>
-			<ul>
-				{items.map(i => <li key={i.id}>{i.checked ? '[X]' : '[ ]'} {i.value}</li>)}
-			</ul>
+			<div className="todoList">
+				<h1 className="todo-title">{title}</h1>
+				<h2 className="todo-subtitle">{subtitle}</h2>
+				{items.map((item) => (
+					<div className="todoItem">
+						<Item
+							key={item.id}
+							text={item.value}
+							isDone={item.checked}
+							isEdit={false}
+						/>
+					</div>))}
+			</div>
 		</div>
 	);
 }
